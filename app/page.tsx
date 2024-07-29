@@ -27,7 +27,7 @@ export default async function Home() {
      
       {data.map((post,idx)=>(
         <Card key={idx} className="" >
-            <Image src={urlFor(post.blogImage).url()} alt="image" width={500} height={500} className="rounded-t-lg object-cover"/>
+            <Image src={urlFor(post.blogImage).url()} alt="image" width={500} height={500} className="rounded-t-lg h-56 object-cover"/>
             <CardContent>
               <h3 className="text-lg md:text-xl mt-3 line-clamp-2 font-bold">{post.title}</h3>
               <p className="text-sm text-gray-500 dark:text-gary-300 mt-2 line-clamp-3">{post.smallDescription}</p>
