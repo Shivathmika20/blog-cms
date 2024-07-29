@@ -1,5 +1,6 @@
 import { client,urlFor } from '@/lib/client';
 import { user } from '@/lib/interface';
+import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
 import React from 'react'
 
@@ -23,11 +24,13 @@ export default async function page({params}: string) {
   // console.log(data);
   return (
     <div>
-      <h1 className='text-center mt-4'>
-        <span className='text-xl md:text-3xl font-bold leading-8 text-balance tracking-tighter'>{data.title}</span>
+      <h1 className='text-center mt-6'>
+        <span className='text-xl md:text-3xl font-bold leading-8 tracking-tighter'>{data.title}</span>
       </h1>
-      <Image src={urlFor(data.blogImage).url()} alt="image" width={800} height={800} className="mt-4 rounded-md border w-11/12 mx-auto "/>
-
+      <Image src={urlFor(data.blogImage).url()} alt="image" width={800} height={800} className="mt-6 rounded-md border mx-auto "/>
+      <div className='mt-12 prose-lg prose-headings:font-bold max-w-2xl mx-auto  '>
+        <PortableText value={data.content}/>
+      </div>
     </div>
   )
 }
