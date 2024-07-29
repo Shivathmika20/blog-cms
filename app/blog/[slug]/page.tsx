@@ -18,7 +18,7 @@ const getData=async (slug :string)=>{
   const data=await client.fetch(query)
   return data
 }
-export default async function page({params}: string) {
+export default async function page({params}:{params: {slug:string}}) {
   // console.log(params.slug);
   const data: user=await getData(params.slug)
   // console.log(data);
