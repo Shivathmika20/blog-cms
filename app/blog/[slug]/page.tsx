@@ -5,6 +5,8 @@ import Image from 'next/image';
 import React from 'react'
 
 
+export const revalidate = 30 // revalidate at most every 30 sec
+
 const getData=async (slug :string)=>{
   const query=`
     *[_type=='blog' && slug.current=="${slug}"]
